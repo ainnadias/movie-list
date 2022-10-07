@@ -1,0 +1,52 @@
+.mainBackground {
+  height: 100vh;
+  background: url("../assets/img/HP-BG.jpeg");
+  background-size: cover;
+}
+
+.intro {
+  height: 500px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px black;
+}
+
+.text-box {
+  margin-top: 10px;
+  text-shadow: 1px 1px black;
+}
+
+.populer {
+  height: 100vh;
+  background: white;
+  background-size: cover;
+}
+
+.movieImg {
+  height: auto;
+  margin: 5px;
+  padding: 5px;
+}
+
+/* .movieWrapper {
+} */
+
+.right {
+  text-align: right;
+}
+
+.detail {
+  margin-top: 200px;
+}
+
+.rating {
+  font-size: 18px;
+}
