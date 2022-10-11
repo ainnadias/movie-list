@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Card, Container, Row, Col, Image, Button } from "react-bootstrap";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 
 const Populer = () => {
   const [movies, setMovies] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_BASE_URL}/movie/popular`, {
@@ -19,7 +20,7 @@ const Populer = () => {
   }, []);
 
   return (
-    <div >
+    <div>
       <Container>
         <h1 className="mt-5">Popular Movie</h1>
         <div className="right">
@@ -27,14 +28,16 @@ const Populer = () => {
         </div>
         <Row>
           {movies.map((result, index) => {
+            console.log(result.id);
             return (
               <Col md={3} className="movieWrapper" key={index}>
-                <Link to={`/detail/`}>
-                  <Card className="text-center movieImg">
-                    <Image src={`${process.env.REACT_APP_IMG_PATH}/${result.poster_path}`} alt="movie" style={{ borderRadius: "15px" }} />
-                    {/* <Button variant="Light">See Details</Button> */}
-                  </Card>
-                </Link>
+                {/* <Link to={`/detail/${result.id}`}> */}
+
+                <Card className="text-center movieImg" onClick={() => navigate(`/detail/${result.id}`)}>
+                  <Image src={`${process.env.REACT_APP_IMG_PATH}/${result.poster_path}`} alt="movie" style={{ borderRadius: "15px" }} />
+                  {/* <Button variant="Light">See Details</Button> */}
+                </Card>
+                {/* </Link> */}
               </Col>
             );
           })}

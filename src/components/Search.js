@@ -1,25 +1,46 @@
-import React from "react";
-import { Form, Container } from "react-bootstrap";
-// import { useHistory, useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { Card, Container, Row, Col, Image, Button } from "react-bootstrap";
 
 const Search = () => {
-  // const Search = (props) => {
-  //   const history = useHistory();
-  //   const [keyword, setKeyword] = useState(props.keyword ? props.keyword : "");
-  //   const goToSearch = useCallback(() => {
-  //     if (keyword.trim().length > 0) {
-  //       history.push(`${category[props.category]}/search/${keyword}`);
-  //     }
-  //     [keyword, props.category, history];
-  //   });
+  const { nama } = useParams();
+  const [movies, setMovies] = useState([]);
+  const navigate = useNavigate();
 
+  console.log(movies);
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_BASE_URL}/search/movie`, {
+        params: {
+          api_key: process.env.REACT_APP_TMDB_KEY,
+          query: nama,
+        },
+      })
+      .then((response) => {
+        setMovies(response.data.results);
+      });
+  }, [nama]);
   return (
     <div className="movie-search">
       <Container>
-        <Form>
-          {/* <Form.Control type="text" placeholder="What do you want to watch?" className="me-2" aria-label="Search" value={keyword} onChange={(e) => setKeyword(e.target.value)} /> */}
-          <Form.Control type="text" placeholder="What do you want to watch?" className="me-2" aria-label="Search"  />
-        </Form>
+        <h1 className="mt-5">Search Movie</h1>
+        <Row>
+          {movies.map((result, index) => {
+            console.log(result.id);
+            return (
+              <Col md={3} className="movieWrapper" key={index}>
+                {/* <Link to={`/detail/${result.id}`}> */}
+
+                <Card className="text-center movieImg" onClick={() => navigate(`/detail/${result.id}`)}>
+                  <Image src={`${process.env.REACT_APP_IMG_PATH}/${result.poster_path}`} alt="movie" style={{ borderRadius: "15px" }} />
+                  {/* <Button variant="Light">See Details</Button> */}
+                </Card>
+                {/* </Link> */}
+              </Col>
+            );
+          })}
+        </Row>
       </Container>
     </div>
   );
