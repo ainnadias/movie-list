@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, Container, Row, Col, Image, Button } from "react-bootstrap";
+import NavBar from "../components/NavBar";
 
 const Search = () => {
   const { nama } = useParams();
@@ -23,6 +24,7 @@ const Search = () => {
   }, [nama]);
   return (
     <div className="movie-search">
+      <NavBar />
       <Container>
         <h1 className="mt-5">Search Movie</h1>
         <Row>
