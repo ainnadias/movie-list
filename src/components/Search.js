@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Card, Container, Row, Col, Image, Button } from "react-bootstrap";
-import NavBar from "../components/NavBar";
+import { Card, Container, Row, Col, Image } from "react-bootstrap";
+import Footer from "./Footer";
 
 const Search = () => {
   const { nama } = useParams();
@@ -24,7 +24,6 @@ const Search = () => {
   }, [nama]);
   return (
     <div className="movie-search">
-      <NavBar />
       <Container>
         <h1 className="mt-5">Search Movie</h1>
         <Row>
@@ -44,6 +43,7 @@ const Search = () => {
           })}
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 };

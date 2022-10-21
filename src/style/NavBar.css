@@ -1,3 +1,27 @@
-.btn {
+.relative {
+  position: relative;
+}
+.navbar {
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  /* background-color: rgb(0, 0, 0); */
+  background: transparent;
+  display: flex;
+}
+
+.navbar-nav .btn {
   margin: 10px;
+  border-radius: 20px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.container input {
+  border-radius: 20px;
+  width: 350px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: 500;
 }

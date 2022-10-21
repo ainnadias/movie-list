@@ -25,9 +25,10 @@
 }
 
 .populer {
-  height: 100vh;
+  /* height: 100vh; */
   background: white;
-  background-size: cover;
+  padding-bottom: 100px;
+  /* background-size: cover; */
 }
 
 .movieImg {
@@ -41,6 +42,7 @@
 
 .right {
   text-align: right;
+  padding-bottom: 30px;
 }
 
 .rating {

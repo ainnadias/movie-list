@@ -1,10 +1,12 @@
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import React from "react";
-import { FaRegPlayCircle, FaStar } from "react-icons/fa";
+import { FaRegPlayCircle } from "react-icons/fa";
+
+import "../style/intro.css";
 
 const Intro = () => {
   return (
-    <div className=" intro" id="intro">
+    <div className="intro" id="intro">
       <Container className="text-white justify-content-center">
         <Row>
           <Col>
@@ -16,10 +18,10 @@ const Intro = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis alias vel officia, numquam, expedita facilis ipsa dolorem ea maiores iste quis excepturi accusamus eos, officiis magni illum! Earum, tenetur amet?
               </Card.Text>
             </div>
-            <div>
+            <div className="watchTrailer">
               <Button variant="info">
-                <FaRegPlayCircle size="25px" />
                 Watch Trailer
+                <FaRegPlayCircle size="25px" />
               </Button>
             </div>
           </Col>
