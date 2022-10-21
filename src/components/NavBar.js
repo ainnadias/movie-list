@@ -17,7 +17,7 @@ const NavBar = () => {
 
   return (
     <div className="relative">
-      <Navbar variant="dark">
+      <Navbar>
         <Container>
           <Navbar.Brand>
             <Link to="/">

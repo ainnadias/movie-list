@@ -4,6 +4,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 
+import "../style/home.css";
+
 const Populer = () => {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();

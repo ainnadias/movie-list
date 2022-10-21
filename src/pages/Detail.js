@@ -34,13 +34,19 @@ const Detail = () => {
         {/* <h2>Contoh dari details film</h2> */}
         {localStorage.getItem("token") ? (
           <div className="detail">
+            <div className="background"></div>
             <Container className=" justify-content-center">
+              <div className="title-detail">
+                <h1>Detail Movie</h1>
+              </div>
               <Row>
-                <Col md={5}>
-                  <Image src={`${process.env.REACT_APP_IMG_PATH}/${movies.poster_path}`} alt="movie" style={{ borderRadius: "15px" }} />
+                <Col>
+                  <div className="imageD">
+                    <Image src={`${process.env.REACT_APP_IMG_PATH}/${movies.poster_path}`} alt="movie" />
+                  </div>
                 </Col>
-                <Col md={3}>
-                  <div className="title" style={{ width: "60rem" }}>
+                <Col>
+                  <div className="title">
                     {/* Harry Potter and Deathly Hallows It All Ends */}
                     {movies.title}
                   </div>
@@ -49,7 +55,7 @@ const Detail = () => {
                     {/* Action, Thriller */}
                     {movies.genres_ids}
                   </div>
-                  <div className="my-3" style={{ width: "50rem" }}>
+                  <div className="my-3">
                     <Card.Text>{movies.overview}</Card.Text>
                   </div>
                   <div className="rating my-4">
@@ -66,12 +72,12 @@ const Detail = () => {
                 </Col>
               </Row>
             </Container>
-            <Footer />
           </div>
         ) : (
           navigate("/")
         )}
       </div>
+      <Footer />
     </div>
   );
 };

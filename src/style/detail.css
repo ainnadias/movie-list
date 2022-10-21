@@ -1,3 +1,26 @@
-.detail {
-  padding-top: 30px;
+.background {
+  background: url(../assets/img/image.jpg);
+  filter: brightness(50%);
+  display: flex;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 30px;
+}
+
+.imageD img {
+  border-radius: 30px;
+  margin-bottom: 30px;
+}
+
+.title-detail h1 {
+  font-size: 40px;
+  color: rgb(4, 0, 0);
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px black;
 }
