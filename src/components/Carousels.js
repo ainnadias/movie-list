@@ -38,10 +38,6 @@ function Carousels() {
               Harry, Ron and Hermione continue their quest to vanquish the evil Voldemort once and for all. Just as things begin to look hopeless for the young wizards, Harry discovers a trio of magical objects that endow him with powers to
               rival Voldemort's formidable skills.
             </p>
-            <Button variant="info">
-              Watch Trailer
-              <FaRegPlayCircle size="25px" />
-            </Button>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -54,10 +50,6 @@ function Carousels() {
               Harry Potter has lived under the stairs at his aunt and uncle's house his whole life. But on his 11th birthday, he learns he's a powerful wizard—with a place waiting for him at the Hogwarts School of Witchcraft and Wizardry.
               As he learns to harness his newfound powers with the help of the school's kindly headmaster, Harry uncovers the truth about his parents' deaths—and about the villain who's to blame.
             </p>
-            <Button variant="info">
-              Watch Trailer
-              <FaRegPlayCircle size="25px" />
-            </Button>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -69,10 +61,6 @@ function Carousels() {
               Cars fly, trees fight back, and a mysterious house-elf comes to warn Harry Potter at the start of his second year at Hogwarts. Adventure and danger await when bloody writing on a wall announces: The Chamber Of Secrets Has Been
               Opened. To save Hogwarts will require all of Harry, Ron and Hermione’s magical abilities and courage.
             </p>
-            <Button variant="info">
-              Watch Trailer
-              <FaRegPlayCircle size="25px" />
-            </Button>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

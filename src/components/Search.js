@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Card, Container, Row, Col, Image } from "react-bootstrap";
-import Footer from "./Footer";
+import { Card, Container, Row, Col, Image, Button } from "react-bootstrap";
+import Title from "./Title";
 
 const Search = () => {
   const { nama } = useParams();
@@ -24,8 +24,9 @@ const Search = () => {
   }, [nama]);
   return (
     <div className="movie-search">
+      {/* <NavBar /> */}
+      <Title label="Search Movie" />
       <Container>
-        <h1 className="mt-5">Search Movie</h1>
         <Row>
           {movies.map((result, index) => {
             console.log(result.id);
@@ -43,7 +44,6 @@ const Search = () => {
           })}
         </Row>
       </Container>
-      <Footer />
     </div>
   );
 };

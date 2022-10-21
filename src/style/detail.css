@@ -1,26 +1,19 @@
-.background {
-  background: url(../assets/img/image.jpg);
-  filter: brightness(50%);
-  display: flex;
-  width: 100%;
-  height: 500px;
-  margin-bottom: 30px;
-}
-
 .imageD img {
   border-radius: 30px;
   margin-bottom: 30px;
+  height: 600px;
 }
 
-.title-detail h1 {
-  font-size: 40px;
-  color: rgb(4, 0, 0);
+.col .desc {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 65px;
 }
 
 .title {
-  font-size: 4.5rem;
+  font-size: 50px;
   font-weight: 600;
   line-height: 1;
-  letter-spacing: 3px;
   text-shadow: 2px 2px black;
+  color: black;
 }
