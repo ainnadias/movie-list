@@ -2,7 +2,6 @@ import Populer from "./Populer";
 import React from "react";
 import Footer from "../components/Footer";
 import Carousels from "../components/Carousels";
-import { Container, Row, Col } from "react-bootstrap";
 import "../style/home.css";
 function Home() {
   return (

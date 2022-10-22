@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Card, Container, Row, Col, Image, Button } from "react-bootstrap";
+import { Card, Container, Row, Col, Image } from "react-bootstrap";
 import Title from "./Title";
 
 const Search = () => {

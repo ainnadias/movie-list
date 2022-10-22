@@ -56,7 +56,7 @@ function LModal(token, setToken) {
         <>
           <Form onSubmit={(e) => handleSubmit(e)}>
             <Modal.Body>
-              <GoogleLogin setToken={setToken} label="Register with Google" />
+              <GoogleLogin setToken={setToken} label="Login with Google" />
               <br />
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 {/* <Form.Label>Email address</Form.Label> */}

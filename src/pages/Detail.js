@@ -75,19 +75,31 @@ const Detail = () => {
                         Watch Trailer {movies.video}
                         <FaRegPlayCircle size="25px" />
                       </Button>
-                      <Modal show={show} centered>
-                        <div className="trailer">
-                          <iframe
-                            width="500"
-                            height="315"
-                            src={`https://www.youtube.com/embed/${videos}`}
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                          ></iframe>
-                        </div>
+                      {/* <Modal show={show} centered>
+                        <Modal.Footer>
+                          <Button variant="danger" onClick={handleClose}>
+                            Close
+                          </Button>
+                        </Modal.Footer>
+                      </Modal> */}
 
+                      <Modal show={show} onHide={handleClose}>
+                        {/* <Modal.Header closeButton>
+                          <Modal.Title>Modal heading</Modal.Title>
+                        </Modal.Header> */}
+                        <Modal.Body>
+                          <div className="trailer">
+                            <iframe
+                              width="450"
+                              height="315"
+                              src={`https://www.youtube.com/embed/${videos}`}
+                              title="YouTube video player"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                            ></iframe>
+                          </div>
+                        </Modal.Body>
                         <Modal.Footer>
                           <Button variant="danger" onClick={handleClose}>
                             Close

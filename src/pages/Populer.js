@@ -19,6 +19,7 @@ const Populer = () => {
       })
       .then((response) => {
         setMovies(response.data.results.splice(0, 4));
+        console.log(setMovies);
       });
   }, []);
 

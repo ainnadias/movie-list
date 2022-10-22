@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Carousel, Button } from "react-bootstrap";
+import React from "react";
+import { Carousel } from "react-bootstrap";
 import Slide1 from "../assets/img/Slide1.jpg";
 import Slide2 from "../assets/img/Slide2.jpg";
 import Slide3 from "../assets/img/Slide3.jpg";
-import { FaRegPlayCircle } from "react-icons/fa";
 
 import "../style/carousel.css";
 
