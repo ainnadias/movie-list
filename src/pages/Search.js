@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
-import Title from "./Title";
+import Title from "../components/Title";
+import Footer from "../components/Footer";
 
 const Search = () => {
   const { nama } = useParams();
@@ -44,6 +45,7 @@ const Search = () => {
           })}
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 };

@@ -1,26 +1,31 @@
 import { useEffect, useState } from "react";
 import { Card, Container, Row, Col, Image, Button } from "react-bootstrap";
-import axios from "axios";
+
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import React from "react";
 
 import "../style/home.css";
-
+import { getMovies } from "../app/reducer/Home";
+import axios from "axios";
 const Populer = () => {
-  const [movies, setMovies] = useState([]);
+  // const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
+  const { movies } = useSelector((state) => state.home);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_BASE_URL}/movie/popular`, {
-        params: {
-          api_key: process.env.REACT_APP_TMDB_KEY,
-        },
-      })
-      .then((response) => {
-        setMovies(response.data.results.splice(0, 4));
-        console.log(setMovies);
-      });
+    // axios
+    //   .get(`${process.env.REACT_APP_BASE_URL}/movie/popular`, {
+    //     params: {
+    //       api_key: process.env.REACT_APP_TMDB_KEY,
+    //     },
+    //   })
+    //   .then((response) => {
+    //     setMovies(response.data.results.splice(0, 4));
+    //     console.log(setMovies);
+    //   });
+    dispatch(getMovies());
   }, []);
 
   return (

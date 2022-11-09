@@ -9,31 +9,41 @@ import Footer from "../components/Footer";
 import Title from "../components/Title";
 
 import "../style/detail.css";
+import { getMovies, getVideos } from "../app/reducer/Detail";
+import { useDispatch, useSelector } from "react-redux";
 
 const Detail = () => {
   const { id } = useParams();
 
   const navigate = useNavigate();
 
-  const [movies, setMovies] = useState([]);
-  const [videos, setVideos] = useState([]);
+  // const [movies, setMovies] = useState([]);
+  // const [videos, setVideos] = useState([]);
+
+  const { movies } = useSelector((state) => state.detail);
+  const { videos } = useSelector((state) => state.detail);
+
+  const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
 
   // console.log(movies);
   useEffect(() => {
-    getData();
+    // getData();
+    dispatch(getMovies(id));
+    dispatch(getVideos(id));
   }, []);
 
-  const getData = async () => {
-    const dataMovies = await axios.get(`${process.env.REACT_APP_BASE_URL}/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`);
-    const dataVideo = await axios.get(`${process.env.REACT_APP_BASE_URL}/movie/${id}/videos?api_key=${process.env.REACT_APP_TMDB_KEY}`);
+  // const getData = async () => {
+  //   const dataMovies = await axios.get(`${process.env.REACT_APP_BASE_URL}/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`);
+  //   const dataVideo = await axios.get(`${process.env.REACT_APP_BASE_URL}/movie/${id}/videos?api_key=${process.env.REACT_APP_TMDB_KEY}`);
 
-    setMovies(dataMovies.data);
-    setVideos(dataVideo.data.results[0].key);
-  };
+  //   setMovies(dataMovies.data);
+  //   setVideos(dataVideo.data.results[0].key);
+  // };
 
   return (
     <div>
@@ -68,25 +78,15 @@ const Detail = () => {
                     <div className="rating my-4">
                       <FaStar color="yellow" />
                       {/* 5.0 / 5 */}
-                      {movies.vote_average}
+                      {Math.min(movies.vote_average).toFixed(1)} / 10
                     </div>
-                    <div className="watchTrailer" onClick={handleShow}>
-                      <Button variant="info">
+                    <div className="watchTrailer">
+                      <Button variant="info" onClick={handleShow}>
                         Watch Trailer {movies.video}
                         <FaRegPlayCircle size="25px" />
                       </Button>
-                      {/* <Modal show={show} centered>
-                        <Modal.Footer>
-                          <Button variant="danger" onClick={handleClose}>
-                            Close
-                          </Button>
-                        </Modal.Footer>
-                      </Modal> */}
 
                       <Modal show={show} onHide={handleClose}>
-                        {/* <Modal.Header closeButton>
-                          <Modal.Title>Modal heading</Modal.Title>
-                        </Modal.Header> */}
                         <Modal.Body>
                           <div className="trailer">
                             <iframe
